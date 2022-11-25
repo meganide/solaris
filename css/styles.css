@@ -1,3 +1,5 @@
+/* ----------------------- GENERAL ----------------------- */
+
 :root {
   --primary-color: rgba(255, 255, 255, 1);
   --secondary-color: rgba(255, 208, 41, 1);
@@ -9,7 +11,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  line-height: 0;
 }
 
 body {
@@ -38,6 +39,14 @@ h2 {
   color: var(--secondary-color);
 }
 
+h3 {
+  font-family: 'Secular One', sans-serif;
+  color: var(--primary-color);
+  font-size: 1.125rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
 p {
   font-family: 'Roboto Condensed', sans-serif;
   line-height: 1.9125rem;
@@ -45,6 +54,12 @@ p {
   font-weight: 300;
   color: var(--primary-color);
 }
+
+/* ----------------------- UTILS ----------------------- */
+.hide {
+  display: none;
+}
+
 
 /* ----------------------- Page one ----------------------- */
 #pageOne {
@@ -79,12 +94,13 @@ p {
   transition: all 0.5s ease-in-out;
 }
 
-.sun:hover, .planets__planet:hover {
+.sun:hover,
+.planets__planet:hover {
   filter: brightness(120%);
   transform: scale(1.3);
 }
 
-.sun:hover{
+.sun:hover {
   transform: scale(1.05);
 }
 
@@ -163,4 +179,85 @@ p {
   height: 66px;
   background-color: rgba(122, 145, 167, 1);
   margin-right: 4.25rem;
+}
+
+/* ----------------------- Page two ----------------------- */
+#pageTwo {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/stars.svg");
+  background-repeat: no-repeat;
+  background-position: 300px 100%;
+  background-size: contain;
+}
+
+.sun--secondary,
+.sun--first-layer,
+.sun--second-layer {
+  box-shadow: none;
+}
+
+.sun--secondary {
+  background-color: rgba(66, 142, 212, 1);
+}
+
+.sun--first-layer {
+  left: -1170px;
+  background-color: rgba(66, 142, 212, 0.1);
+  margin-left: 4.0625rem;
+}
+
+.sun--second-layer {
+  left: -1184px;
+  background-color: rgba(66, 142, 212, 0.06);
+  margin-left: 125px;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(6.25rem, auto);
+  justify-items: center;;
+  grid-template-areas: 
+  ". . . ."
+  ". info-text info-text ."
+  ". info-stats info-stats ."
+  ;
+
+}
+
+.info__text {
+  grid-area: info-text;
+  max-width: 640px;
+}
+
+.info__planet {
+  margin: 1rem 0 2rem 0;
+}
+
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 2rem 0;
+}
+
+.info__stats {
+  grid-area: info-stats;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  grid-row-gap: 2rem;
+  max-width: 640px;
+}
+
+.info__stat-title {
+  letter-spacing: 0.09em;
+}
+
+.info__stat-answer {
+  letter-spacing: 0.16em;
+}
+
+.info__stats-hr {
+  grid-column: span 2;
+  margin: 0;
 }
